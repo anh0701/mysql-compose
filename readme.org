@@ -1,19 +1,19 @@
 * usage
+** Linux
 1. Start docker
-#+begin_src shell
-  chmod +x ./run-daemon.sh;
-  ./run-daemon.sh;
-#+end_src
+  #+begin_src shell
+    chmod +x ./run-daemon.sh;
+    ./run-daemon.sh;
+  #+end_src
 
 2. Create and start containers
-#+begin_src  shell
-   chmod +x ./up.sh;
-  ./up.sh;
-#+end_src
+  #+begin_src  shell
+    chmod +x ./up.sh;
+    ./up.sh;
+  #+end_src
 
 3. Stop and remove containers, networks
-#+begin_src shell
-   chmod +x ./down.sh;
-  ./down.sh;
-#+end_src
-  
+  #+begin_src shell
+    chmod +x ./down.sh;
+    ./down.sh;
+  #+end_src
