@@ -1,8 +1,8 @@
-echo "Do you wish to create volumes name, password mysql?(Yes/No)"
+echo "Which option do you choose?"
 PS3="Select the operation: "
-select yn in "Yes" "No"; do
+select yn in "create compose file and run container" "run container" "stop and remove container created by up" "remove volume" "cancle"; do
     case $yn in
-        Yes ) 
+        create\ compose\ file\ and\ run\ container ) 
             read -p "Enter the volumes name: " n1
             read -p "Enter the password mysql: " n2
             # echo "$n1 - $n2"
@@ -16,7 +16,19 @@ select yn in "Yes" "No"; do
             sudo docker-compose -f mysql.yaml up -d
             break
             ;;
-        No ) 
+        run\ container )
+            read -p "Enter the path to compose file: " composeup
+            sudo docker-compose -f $composeup up -d
+            ;;
+        stop\ and\ remove\ container\ created\ by\ up )
+            read -p "Enter the path to compose file: " composedown
+            sudo docker-compose -f $composedown down
+            ;;
+        remove\ volume )
+            read -p "Enter the volume name: " volume
+            sudo docker volume rm $volume
+            ;;
+        cancle ) 
             exit
             ;;
     esac
