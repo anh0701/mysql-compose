@@ -1,18 +1,5 @@
-# sudo  systemctl start docker;
-
-# cat mysql.yaml;                  
-
-# sudo docker volume create $vol ;
-
-# sed -i 's/$old-text/$new-text/g' mysql.yaml;
-
-# sudo docker-compose -f mysql.yaml up -d;
-
-
-echo "Do you wish to create volumes name, password mysql?(Yes/No(default volumes: test-vol, password: 123456))"
-
+echo "Do you wish to create volumes name, password mysql?(Yes/No)"
 PS3="Select the operation: "
-
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) 
@@ -30,9 +17,6 @@ select yn in "Yes" "No"; do
             break
             ;;
         No ) 
-            sudo  systemctl start docker
-            sudo docker volume create test-vol
-            sudo docker-compose -f mysql.yaml up -d
             exit
             ;;
     esac

@@ -2,27 +2,32 @@
 ** Linux
 1. Start docker
   #+begin_src shell
-       chmod +x ./run-daemon.sh;
-       ./run-daemon.sh;
+    chmod +x ./run-daemon.sh;
+    ./run-daemon.sh;
   #+end_src
 
 2. Create a volume
-   #+begin_src shell
-	  chmod +x ./cre-vol.sh;
-	  ./cre-vol.sh;
-     #+end_src
+  #+begin_src shell
+    chmod +x ./cre-vol.sh;
+    ./cre-vol.sh;
+  #+end_src
 
 3. Create and start containers
-       #+begin_src  shell
-	 chmod +x ./up.sh;
-	 ./up.sh;
+  #+begin_src  shell
+    chmod +x ./up.sh;
+    ./up.sh;
   #+end_src
 
 4. Stop and remove containers, networks
   #+begin_src shell
-	 chmod +x ./down.sh;
-	 ./down.sh;
+    chmod +x ./down.sh;
+    ./down.sh;
   #+end_src
 
+5. Quick start
+  #+begin_src shell
+    chmod +x ./run.sh;
+    ./run.sh;
+  #+end_src
 ** Windows
 - run in wsl
