@@ -1,6 +1,6 @@
 echo "Which option do you choose?"
 PS3="Select the operation: "
-select yn in "create compose file and run container" "run container" "stop and remove container created by up" "remove volume" "cancle"; do
+select yn in "create compose file and run container" "run container" "stop and remove container created by up" "remove volume" "cancel"; do
     case $yn in
         create\ compose\ file\ and\ run\ container ) 
             read -p "Enter the volumes name: " n1
@@ -28,7 +28,7 @@ select yn in "create compose file and run container" "run container" "stop and r
             read -p "Enter the volume name: " volume
             sudo docker volume rm $volume
             ;;
-        cancle ) 
+        cancel ) 
             exit
             ;;
     esac
