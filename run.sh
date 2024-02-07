@@ -1,12 +1,13 @@
 echo "Which option do you choose?"
+sudo  systemctl start docker
 PS3="Select the operation: "
-select yn in "create compose file and run container" "run container" "stop and remove container created by up" "remove volume" "cancel"; do
+select yn in "create compose file and run container" "run container" "list container" "logs container" "stop and remove container created by up" "create volume" "remove volume" "cancel"; do
     case $yn in
         create\ compose\ file\ and\ run\ container ) 
             read -p "Enter the volumes name: " n1
             read -p "Enter the password mysql: " n2
             # echo "$n1 - $n2"
-            sudo  systemctl start docker
+            # sudo  systemctl start docker
             sudo docker volume create $n1
             mkdir output/$n1
             cp .env mysql.yaml output/$n1
@@ -20,9 +21,20 @@ select yn in "create compose file and run container" "run container" "stop and r
             read -p "Enter the path to compose file: " composeup
             sudo docker-compose -f $composeup up -d
             ;;
+        list\ container )
+            sudo docker ps
+            ;;
+        logs\ container )
+            read -p "Enter the name container: " container
+            sudo docker logs $container
+            ;;
         stop\ and\ remove\ container\ created\ by\ up )
             read -p "Enter the path to compose file: " composedown
             sudo docker-compose -f $composedown down
+            ;;
+        create\ volume )
+            read -p "Enter the volume name: " volumecre
+            sudo docker volume create $volumecre
             ;;
         remove\ volume )
             read -p "Enter the volume name: " volume
