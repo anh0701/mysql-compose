@@ -14,7 +14,7 @@ select yn in "create compose file and run container" "run container" "list conta
             sed -i 's/test-vol/'$n1'/g' output/$n1/mysql.yaml
             sed -i 's/123456/'$n2'/g' output/$n1/.env
             # cat output/$n1/mysql.yaml
-            sudo docker-compose -f mysql.yaml up -d
+            sudo docker-compose -f output/$n1/mysql.yaml up -d
             break
             ;;
         run\ container )
